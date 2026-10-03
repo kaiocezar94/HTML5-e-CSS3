@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouping tags</title>
+    <style>
+
+
+        body{
+            background-color: dimgrey;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0;
+        }
+
+        header{
+            background-color: wheat;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        nav{
+            background-image: linear-gradient(to right, rgb(221, 217, 217), rgb(174, 170, 170));
+            padding: 3px;
+            box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.315);
+        }
+
+        nav > a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            margin-right: 30px;
+        }
+
+        nav a:hover{
+            text-decoration: underline;
+        }
+
+        main{
+            background-color: wheat;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        article{
+            background-color: #ccc;
+            text-align: justify;
+            padding: 5px;
+        }
+
+        article > aside{
+            background-color: gray;
+        }
+
+        footer{
+            background-color: black;
+            color: white;
+            padding: 4px;
+            text-align: center;
+        }
+
+        footer > p{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu site</h1>
+        <nav>
+            <a href="">link</a>
+            <a href="">link</a>
+            <a href="">link</a>
+            <a href="">link</a>
+            <a href="">link</a>
+        </nav>
+    </header>
+    <main>
+        <section id="assuntos">
+
+        </section>
+        <section id="noticias">
+            <article>
+                <h2>Noticias sobre o Brasil</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus ullam non, similique assumenda nesciunt possimus adipisci soluta temporibus ut voluptatem, nostrum fuga ad! Iusto laborum facilis exercitationem aliquam aut ipsam!</p>
+                <aside>
+                    <p>artigo escrito por Kaio Silva</p>
+                </aside>
+            </article>
+            <article>
+
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido pelo Kaio</p>
+    </footer>
+</body>
+</html>

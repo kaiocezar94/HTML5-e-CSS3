@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.caixa{
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    margin-top: 20px;
+    border: 1px dashed black;
+    padding: 15px;
+    background-image: linear-gradient(to right, rgb(68, 68, 68), rgb(37, 37, 37));
+    color: rgb(224, 177, 57);
+    margin-left: 15px;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    width: 100px;
+    height: 40px;
+    background-image: linear-gradient(to right, rgb(68, 68, 68), rgb(37, 37, 37));
+    color: rgb(224, 177, 57);
+    margin-left: 15px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    border: 0;
+    box-shadow: 2px 2px;
+}
+

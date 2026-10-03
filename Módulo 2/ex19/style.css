@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background-image: linear-gradient(  to right, #ABB6FF, #BFC3DB);
+    font-family: Montserrat, sans-serif;
+}
+
+h1#principal{
+    color:#7B81A8; 
+    text-align: center;
+    background-color: rgba(196, 237, 251, 0.445);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+h2{
+    color: #3E4675;
+    margin-top: 20px;
+}
+
+h3{
+    color: #161C42; 
+}
+
+.basico{
+    color: rgb(53, 113, 53);
+    
+}
+
+.intermediario{
+    color: rgb(113, 111, 53);
+}
+
+.avançado{
+    color: rgb(113, 53, 53);
+}
+
+.destaque{
+    background-color: rgb(167, 167, 90);
+}
