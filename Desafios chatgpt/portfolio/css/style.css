@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+}
+
+body{
+    background-color: #DDF3F0;
+    font-family: 'DM Mono';
+}
+
+header{
+    background-image: linear-gradient(to bottom, #89A666, #60714E);
+    min-height: 130px;
+    padding: 15px;
+    text-align: center;
+}
+
+header > h1{
+    color: white;
+    font-size: 2.3em;
+    padding: 5px;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+header > p{
+    color: white;
+    font-size: 1.1em;
+    max-width: 500px;
+    margin: auto;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+nav{
+    background-color: #60714E;
+    padding: 10px;
+}
+
+nav > a{
+    text-decoration: none;
+    color: #c09464;
+    font-weight: bold;
+    margin-right: 13px;
+    padding: 7px;
+    transition-duration: .8s;
+}
+
+nav > a:hover{
+    background-color: #DDF3F0;
+    color: #838E73;
+    border-radius: 8px;
+}
+
+main{
+    max-width: 1000px;
+    min-width: 350px;
+    background-color: white;
+    margin: auto;
+    padding: 10px;
+}
+
+main h2{
+    text-align: center;
+    padding: 5px;
+}
+
+main p{
+    text-align: center;
+    padding: 5px;
+}
+
+main picture.perfil{
+    max-width: 320px;
+}
+
+main picture.perfil img{
+    width: 200px;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+main div.projetos{
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    background-color: #838E73;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+main picture img{
+    width: 295px;
+    height: 200px;
+}
+
+main picture h3{
+    text-align: center;
+    max-width: 295px;
+}
+
+main picture p{
+    text-align: justify;
+    margin: auto;
+    line-height: 1.6em;
+    max-width: 295px;
+}
+
+footer{
+    
+}
