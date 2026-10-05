@@ -31,6 +31,7 @@ header{
     display: flex;
     align-items: center;
     background-color: var(--cor4);
+    flex-wrap: wrap;
 }
 
 header h1 > span{
@@ -41,6 +42,7 @@ header > h1{
     width: 30%;
     color: var(--cor0);
     display: flex;
+    flex-wrap: wrap;
     justify-content: left;
     align-items: center;
     margin-left: 30px;
@@ -50,6 +52,7 @@ header > h1{
 
 nav.menu{
    width: 60%;
+   flex-wrap: wrap;
    display: flex;
    justify-content: right;
 }
@@ -73,6 +76,7 @@ nav.menu > a:hover{
 section.perfil{
     background-color: #07161d;
     display: flex;
+    flex-wrap: wrap;
     justify-content: left;
     gap: 33px;
     padding: 10px;
@@ -91,6 +95,7 @@ main section.perfil picture img{
 
 div.paragrafo{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     gap: 10px;
     padding: 10px;
@@ -139,6 +144,7 @@ p.botao > a{
 section.aprender{
     background-color: var(--cor4);
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     padding: 30px 50px 50px 30px;
@@ -168,6 +174,7 @@ section.aprender p.descricao{
 
 section.aprender div.box{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 25px;
     padding: 15px;
@@ -176,6 +183,7 @@ section.aprender div.box{
 
 .icons picture{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     background-color: #040f14;
     padding: 20px;
