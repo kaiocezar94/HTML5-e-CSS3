@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --cor0: #F2F2F2;
+    --cor1: #9AC7D9;
+    --cor2: #518EA6;
+    --cor3: #2D5F73;
+    --cor4: #0A1D26;
+
+    --font-padrao: 'Anonymous Pro', sans-serif;
+    --font-destaque: 'DM Mono', sans-serif;
+}
+
+html,body{
+    height: 100%;
+}
+
+body{
+    background-color: var(--cor0);
+    font-family: var(--font-padrao);
+}
+
+header{
+    padding: 15px;
+    width: 100%;
+    max-height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: var(--cor4);
+}
+
+header h1 > span{
+    color: #31673a;
+}
+
+header > h1{
+    width: 30%;
+    color: var(--cor0);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 30px;
+    font-size: 2.5em;
+    font-family: var(--font-destaque);
+}
+
+nav.menu{
+   width: 60%;
+   display: flex;
+   justify-content: right;
+}
+
+nav.menu > a{
+    text-decoration: none;
+    color: var(--cor0);
+    padding: 10px;
+    font-weight: bold;
+    font-family: var(--font-destaque);
+    font-size: 1em;
+    transition-duration: .7s;
+}
+
+nav.menu > a:hover{
+    background-color: #31673a;
+    border-radius: 10px;
+    color: var(--cor1);
+}
+    
+section.perfil{
+    background-color: #07161d;
+    display: flex;
+    justify-content: left;
+    gap: 33px;
+    padding: 10px;
+    padding-bottom: 40px;
+}
+
+main section.perfil picture{
+    padding: 30px;
+}
+
+main section.perfil picture img{
+    width: 300px;
+    outline: 4px solid #4ba159;
+    border-radius: 50%;
+}
+
+div.paragrafo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 50%;
+}
+
+div.paragrafo p.primeiro{
+    color: #4ba159;
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+
+div.paragrafo p.segundo{
+    color: var(--cor0);
+    font-size: 4.5em;
+    font-weight: bolder;
+}
+
+div.paragrafo p.terceiro{
+    color: var(--cor0);
+    font-size: 1.7em;
+    font-weight: bolder;
+}
+
+div.paragrafo p.quarto{
+    color: var(--cor0);
+    line-height: 1.8em;
+    text-align: justify;
+}
+
+p.botao > a{
+    text-decoration: none;
+    color: var(--cor0);
+    width: 215px;
+    background-color: #4ba159;
+    padding: 8px;
+    border-radius: 8px;
+    display: block;
+    margin: auto;
+    font-family: var(--font-destaque);
+    cursor: pointer;
+    text-align: center;
+}
+
+section.aprender{
+    background-color: var(--cor4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 50px 50px 30px;
+}
+
+section.aprender h3{
+    color: #4ba159;
+    font-family: var(--font-destaque);
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    padding: 8px;
+}
+
+section.aprender p.tec{
+    color: var(--cor0);
+    padding: 8px;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+section.aprender p.descricao{
+    color: var(--cor0);
+    max-width: 600px;
+    text-align: center;
+    padding: 8px;
+}
+
+section.aprender div.box{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.icons picture{
+    display: flex;
+    justify-content: center;
+    background-color: #040f14;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+div.box div.icons p{
+    text-align: center;
+    color: var(--cor0);
+    padding: 5px;
+    margin-top: 7px;
+}
+
+.icons picture img{
+    width: 35%;
+}
+
+footer{
+    text-align: center;
+    background-color: #040f14;
+    color: var(--cor0);
+    padding: 3px;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--cor0);
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor1);
+}
+
+main{
+   border-radius: 0 0 8px 8px; 
+}
