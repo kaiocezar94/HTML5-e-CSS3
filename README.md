@@ -73,7 +73,7 @@ Também serviu para desenvolver a capacidade de resolver problemas de layout atr
 [Adicionar aqui o link para o GitHub Pages]
 
 📁 Repositório:
-[Adicionar aqui o link do repositório]
+[https://github.com/kaiocezar94/HTML5-e-CSS3]
 
 👨‍💻 Autor
 
