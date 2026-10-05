@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --cor0: #F2F2F2;
+    --cor1: #9AC7D9;
+    --cor2: #518EA6;
+    --cor3: #2D5F73;
+    --cor4: #0A1D26;
+
+    --font-padrao: 'Anonymous Pro', sans-serif;
+    --font-destaque: 'DM Mono', sans-serif;
+}
+
+html,body{
+    height: 100%;
+}
+
+body{
+    background-color: var(--cor1);
+    font-family: var(--font-padrao);
+}
