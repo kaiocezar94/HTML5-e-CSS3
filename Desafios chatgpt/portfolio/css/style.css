@@ -116,5 +116,8 @@ main picture p{
 }
 
 footer{
-    
+    text-align: center;
+    background-color: #c09464;
+    padding: 3px;
+    letter-spacing: 3px;
 }
