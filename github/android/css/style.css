@@ -61,7 +61,7 @@ header > p{
     margin: auto;
     padding: 0 10px 0 10px;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.414);
-    margin-bottom: 20px;
+    padding-bottom: 50px;
 }
 
 nav{
