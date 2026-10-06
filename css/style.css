@@ -25,13 +25,16 @@ body{
 }
 
 header{
+    background-color: var(--cor4);
     padding: 15px;
     width: 100%;
-    max-height: 70px;
+    /* Removido max-height para evitar que o conteúdo transborde em ecrãs pequenos quando quebrar */
+    min-height: 70px; 
     display: flex;
     align-items: center;
-    background-color: var(--cor4);
+    justify-content: space-between; /* Alinha o h1 e a nav nas extremidades automaticamente */
     flex-wrap: wrap;
+    gap: 15px; /* Evita que fiquem colados ao quebrar linha */
 }
 
 header h1 > span{
@@ -39,22 +42,31 @@ header h1 > span{
 }
 
 header > h1{
-    width: 30%;
+    /* Substituído width fixo por flex-grow fluido */
+    flex: 1 1 250px; 
     color: var(--cor0);
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: flex-start;
     align-items: center;
-    margin-left: 30px;
-    font-size: 2.5em;
+    /* Substituído margin fixa por clamp para se adaptar ao ecrã */
+    margin-left: clamp(10px, 3vw, 30px);
+    font-size: clamp(1.8em, 4vw, 2.5em); /* Fonte fluida */
     font-family: var(--font-destaque);
 }
 
 nav.menu{
-   width: 60%;
+   /* Substituído width fixo por flex-grow fluido */
+   flex: 2 1 300px;
    flex-wrap: wrap;
    display: flex;
-   justify-content: right;
+   /* Em ecrãs pequenos centraliza, em grandes alinha à direita */
+   justify-content: var(--justify-menu, flex-end); 
+}
+
+/* Truque fluido: se o espaço for menor que 600px (aproximadamente), os itens alinham ao centro */
+@container (max-width: 600px) {
+    nav.menu { justify-content: center; }
 }
 
 nav.menu > a{
@@ -77,18 +89,24 @@ section.perfil{
     background-color: #07161d;
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
-    gap: 33px;
-    padding: 10px;
-    padding-bottom: 40px;
+    /* Centraliza automaticamente em ecrãs pequenos quando os elementos empilharem */
+    justify-content: center; 
+    align-items: center;
+    gap: clamp(15px, 4vw, 33px);
+    padding: clamp(15px, 3vw, 30px);
 }
 
 main section.perfil picture{
-    padding: 30px;
+    padding: 10px; /* Reduzido para dar mais espaço à imagem em ecrãs mobile */
+    display: flex;
+    justify-content: center;
 }
 
 main section.perfil picture img{
-    width: 300px;
+    /* Substituído width fixo por max-width para nunca transbordar o ecrã */
+    width: 100%;
+    max-width: 300px;
+    height: auto; /* Mantém a proporção da imagem */
     outline: 4px solid #4ba159;
     border-radius: 50%;
 }
@@ -99,25 +117,27 @@ div.paragrafo{
     flex-direction: column;
     gap: 10px;
     padding: 10px;
-    margin-top: 10px;
-    width: 50%;
+    /* Mudado de 50% fixo para flex-basis fluida. Ocupa 100% no mobile e divide espaço no desktop */
+    flex: 1 1 450px; 
+    min-width: 280px; /* Evita que fique excessivamente esmagado */
 }
 
 div.paragrafo p.primeiro{
     color: #4ba159;
     font-weight: bolder;
-    font-size: 1.3em;
+    font-size: clamp(1.1em, 2vw, 1.3em);
 }
 
 div.paragrafo p.segundo{
     color: var(--cor0);
-    font-size: 4.5em;
+    font-size: clamp(2.2em, 7vw, 4.5em); /* Reduz drasticamente no mobile para não quebrar layout */
     font-weight: bolder;
+    line-height: 1.1em;
 }
 
 div.paragrafo p.terceiro{
     color: var(--cor0);
-    font-size: 1.7em;
+    font-size: clamp(1.3em, 3vw, 1.7em);
     font-weight: bolder;
 }
 
@@ -125,20 +145,32 @@ div.paragrafo p.quarto{
     color: var(--cor0);
     line-height: 1.8em;
     text-align: justify;
+    font-size: clamp(0.9em, 1.5vw, 1em);
+}
+
+p.botao{
+    width: 100%;
+    margin-top: 15px;
 }
 
 p.botao > a{
     text-decoration: none;
     color: var(--cor0);
-    width: 215px;
+    width: 100%;
+    max-width: 215px; /* Garante que o botão não estica infinitamente */
     background-color: #4ba159;
-    padding: 8px;
+    padding: 12px 8px;
     border-radius: 8px;
     display: block;
-    margin: auto;
+    margin: 0 auto; /* Centraliza no container */
     font-family: var(--font-destaque);
     cursor: pointer;
     text-align: center;
+    transition: background-color 0.3s;
+}
+
+p.botao > a:hover{
+    background-color: #3b8247;
 }
 
 section.aprender{
@@ -147,47 +179,62 @@ section.aprender{
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    padding: 30px 50px 50px 30px;
+    padding: clamp(20px, 5vw, 50px) clamp(15px, 5vw, 50px);
 }
 
 section.aprender h3{
     color: #4ba159;
     font-family: var(--font-destaque);
-    font-size: 1.2em;
+    font-size: clamp(1em, 2vw, 1.2em);
     letter-spacing: 2px;
     padding: 8px;
+    text-align: center;
 }
 
 section.aprender p.tec{
     color: var(--cor0);
     padding: 8px;
-    font-size: 2.2em;
+    font-size: clamp(1.6em, 5vw, 2.2em);
     font-weight: bold;
+    text-align: center;
 }
 
 section.aprender p.descricao{
     color: var(--cor0);
     max-width: 600px;
+    width: 100%;
     text-align: center;
     padding: 8px;
+    font-size: clamp(0.9em, 1.8vw, 1em);
 }
 
 section.aprender div.box{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center; /* Centraliza os cartões em qualquer ecrã */
     gap: 25px;
     padding: 15px;
     margin-top: 20px;
+    width: 100%;
+}
+
+div.box div.icons{
+    /* O segredo para os cartões auto-responsivos: */
+    /* Eles crescem, mas nunca ficam menores que 140px nem maiores que 200px */
+    flex: 1 1 140px; 
+    max-width: 200px; 
 }
 
 .icons picture{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     background-color: #040f14;
     padding: 20px;
     border-radius: 10px;
+    aspect-ratio: 1 / 1; /* Mantém o container do ícone sempre quadrado */
 }
 
 div.box div.icons p{
@@ -195,17 +242,21 @@ div.box div.icons p{
     color: var(--cor0);
     padding: 5px;
     margin-top: 7px;
+    font-size: clamp(0.85em, 1.5vw, 1em);
 }
 
 .icons picture img{
-    width: 35%;
+    width: 100%;
+    max-width: 60px; /* Em vez de 35% do container, define um tamanho fixo saudável que se ajusta */
+    height: auto;
 }
 
 footer{
     text-align: center;
     background-color: #040f14;
     color: var(--cor0);
-    padding: 3px;
+    padding: 15px 10px; /* Aumentado o padding para melhor toque em mobile */
+    font-size: 0.9em;
 }
 
 footer a{
@@ -220,4 +271,5 @@ footer a:hover{
 
 main{
    border-radius: 0 0 8px 8px; 
+   width: 100%;
 }
