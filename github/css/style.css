@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* Nova paleta focada em tons escuros e elegantes */
+    --bg-principal: #0b131a;     /* Cor de fundo principal da página */
+    --bg-container: #111c24;     /* Fundo ligeiramente mais claro para contraste */
+    --bg-cartao: #17242f;        /* Fundo dos cartões dos projetos */
+    --cor-texto-claro: #f2f4f7;  /* Texto principal */
+    --cor-texto-mutado: #94a3b8; /* Descrições secundárias */
+    --cor-destaque: #4ba159;     /* Verde de destaque */
+    --cor-destaque-hover: #3b8247;
+
+    --font-padrao: Arial, sans-serif;
+    --font-destaque: Helvetica, sans-serif;
+}
+
+html, body{
+    height: 100%;
+    background-color: var(--bg-principal);
+    font-family: var(--font-padrao);
+    color: var(--cor-texto-claro);
+    /* Garante que o corpo ocupa o ecrã inteiro e ajuda no alinhamento global */
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- HEADER --- */
+header{
+    padding: 20px clamp(15px, 5vw, 40px);
+    width: 100%;
+    min-height: 70px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: var(--bg-container);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+header h1 > span{
+    color: var(--cor-texto-claro);
+}
+
+header > h1{
+    flex: 1 1 200px; 
+    color: var(--cor-destaque);
+    font-size: clamp(1.6em, 4vw, 2.2em);
+    font-family: var(--font-destaque);
+}
+
+nav.menu{
+   flex: 2 1 300px;
+   flex-wrap: wrap;
+   display: flex;
+   justify-content: flex-end; 
+}
+
+nav.menu > a{
+    text-decoration: none;
+    color: var(--cor-texto-mutado);
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: 0.3s ease;
+}
+
+nav.menu > a:hover{
+    color: var(--cor-texto-claro);
+}
+
+/* --- MAIN & CENTRALIZAÇÃO GLOBAL --- */
+main {
+    flex: 1; /* Ocupa todo o espaço vertical restante entre o header e o footer */
+    display: flex;
+    align-items: center;     /* Centraliza verticalmente o conteúdo interno */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo interno */
+    padding: clamp(20px, 5vw, 60px) 15px;
+    width: 100%;
+}
+
+/* --- SECÇÃO DOS PROJETOS --- */
+section.aprender{
+    background-color: var(--bg-container);
+    width: 100%;
+    max-width: 1000px; /* Limita a largura máxima para o conteúdo não espalhar demasiado em ecrãs gigantes */
+    border-radius: 16px;
+    padding: clamp(30px, 6vw, 50px) clamp(20px, 5vw, 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os textos, descrição e a grelha */
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+section.aprender h3{
+    color: var(--cor-destaque);
+    font-family: var(--font-destaque);
+    font-size: clamp(0.9em, 2vw, 1.1em);
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+section.aprender p.tec{
+    font-size: clamp(1.8em, 5vw, 2.4em);
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+section.aprender p.descricao{
+    color: var(--cor-texto-mutado);
+    max-width: 550px;
+    width: 100%;
+    font-size: clamp(0.95em, 1.8vw, 1.05em);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* --- GRELHA DOS CARTÕES (BOX) --- */
+section.aprender div.box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Mantém os cartões centralizados horizontalmente */
+    gap: 25px;
+    padding: 10px 0;
+    width: 100%;
+}
+
+/* Configuração fluida de tamanho dos cartões */
+div.box div.icons {
+    flex: 1 1 180px; 
+    max-width: 220px; 
+}
+
+div.box div.icons a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+/* Moldura interna do cartão */
+.icons picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, var(--bg-cartao), #1d2d3a);
+    padding: 30px;
+    border-radius: 14px;
+    aspect-ratio: 1 / 1;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito Hover nos Cartões */
+div.box div.icons:hover .icons picture {
+    transform: translateY(-8px);
+    border-color: var(--cor-destaque);
+    box-shadow: 0 15px 30px rgba(75, 161, 89, 0.2);
+}
+
+.icons picture img{
+    width: 100%;
+    max-width: 65px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+/* Título de cada projeto abaixo da imagem */
+div.box div.icons p {
+    color: var(--cor-texto-claro);
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: clamp(0.95em, 1.5vw, 1.05em);
+    transition: color 0.3s;
+}
+
+div.box div.icons:hover p {
+    color: var(--cor-destaque); 
+}
+
+/* --- BOTÃO VOLTAR NO FIM --- */
+section.aprender p.botao {
+    width: 100%;
+    margin-top: 40px;
+}
+
+section.aprender p.botao > a{
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    width: 100%;
+    max-width: 200px;
+    background-color: transparent;
+    border: 2px solid var(--cor-destaque);
+    padding: 10px 20px;
+    border-radius: 30px; /* Botão estilo pílula moderna */
+    display: block;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+}
+
+section.aprender p.botao > a:hover{
+    background-color: var(--cor-destaque);
+    box-shadow: 0 8px 20px rgba(75, 161, 89, 0.3);
+    transform: scale(1.03);
+}
+
+/* --- FOOTER --- */
+footer{
+    text-align: center;
+    background-color: var(--bg-container);
+    color: var(--cor-texto-mutado);
+    padding: 20px 10px;
+    font-size: 0.9em;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
